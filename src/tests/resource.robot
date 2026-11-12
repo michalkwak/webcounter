@@ -7,7 +7,6 @@ ${DELAY}     500ms
 ${HOME_URL}  http://${SERVER}
 ${BROWSER}   chromium
 ${HEADLESS}  false
-${HEADLESS}  false
 
 *** Keywords ***
 Open And Configure Browser
@@ -18,3 +17,8 @@ Open And Configure Browser
     END
     New Context
     New Page  about:blank
+
+Reset Counter
+    Go To  ${HOME_URL}
+    Click  button >> text=Nollaa
+    Get Text  body  *=  nappia painettu 0 kertaa
